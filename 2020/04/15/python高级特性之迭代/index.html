@@ -20,29 +20,33 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="易之道">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="python �߼�����֮��������һ��list����tuple,ͨ��forѭ����������list����tuple�����ֱ������ǳ�֮Ϊ����python�У�����ʹ��for......in�����е��������ܶ�����ʹ���±�����ɡ���python��forѭ������ɶ�Ҫ����C��forѭ������Ϊ��python��">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python高级特性之迭代">
+<meta property="og:url" content="http://yoursite.com/2020/04/15/python%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E8%BF%AD%E4%BB%A3/index.html">
 <meta property="og:site_name" content="易之道">
+<meta property="og:description" content="python �߼�����֮��������һ��list����tuple,ͨ��forѭ����������list����tuple�����ֱ������ǳ�֮Ϊ����python�У�����ʹ��for......in�����е��������ܶ�����ʹ���±�����ɡ���python��forѭ������ɶ�Ҫ����C��forѭ������Ϊ��python��">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-15T09:58:54.454Z">
+<meta property="article:modified_time" content="2020-04-15T09:58:54.455Z">
 <meta property="article:author" content="Yang">
 <meta property="article:tag" content="学习、分享">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/04/15/python%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E8%BF%AD%E4%BB%A3/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>易之道</title>
+  <title>python高级特性之迭代 | 易之道</title>
   
 
 
@@ -156,9 +160,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -174,10 +179,9 @@
       <meta itemprop="name" content="易之道">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/15/python%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7%E4%B9%8B%E8%BF%AD%E4%BB%A3/" class="post-title-link" itemprop="url">python高级特性之迭代</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          python高级特性之迭代
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -200,7 +204,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="python-�߼�����֮����"><a href="#python-�߼�����֮����" class="headerlink" title="python �߼�����֮����"></a>python �߼�����֮����</h1><p>����һ��<strong>list</strong>����<strong>tuple</strong>,ͨ��<code>for</code>ѭ����������<strong>list</strong>����<strong>tuple</strong>�����ֱ������ǳ�֮Ϊ<strong>����</strong><br>python�У�����ʹ��<code>for......in</code>�����е��������ܶ�����ʹ���±�����ɡ���<br>python��<code>for</code>ѭ������ɶ�Ҫ����C��<code>for</code>ѭ������Ϊ��python��<code>for</code>ѭ������������<strong>list</strong>����<strong>tuple</strong>�ϣ������������������ĵ�������֮�ϡ�<br><strong>list</strong>��������������Ȼ���±꣬���Ǻܶ�����������û���±�ģ�<strong>list</strong>�����±��<strong>0</strong>��ʼ�������ǣ�ֻҪ�ǿɵ����������������±꣬�����Ե�����<br>��ô��ʲô��<strong>�ɵ�������</strong>�������������Ա�<code>for</code>ѭ�������Ķ������<strong>�ɵ�������</strong>����ô������ж�һ�������ǿɵ��������أ�������ͨ��collectionsģ���Iterable�����жϣ�</p>
+        <h1 id="python-�߼�����֮����"><a href="#python-�߼�����֮����" class="headerlink" title="python �߼�����֮����"></a>python �߼�����֮����</h1><p>����һ��<strong>list</strong>����<strong>tuple</strong>,ͨ��<code>for</code>ѭ����������<strong>list</strong>����<strong>tuple</strong>�����ֱ������ǳ�֮Ϊ<strong>����</strong><br>python�У�����ʹ��<code>for......in</code>�����е��������ܶ�����ʹ���±�����ɡ���<br>python��<code>for</code>ѭ������ɶ�Ҫ����C��<code>for</code>ѭ������Ϊ��python��<code>for</code>ѭ������������<strong>list</strong>����<strong>tuple</strong>�ϣ������������������ĵ�������֮�ϡ�<br><strong>list</strong>��������������Ȼ���±꣬���Ǻܶ�����������û���±�ģ�<strong>list</strong>�����±��<strong>0</strong>��ʼ�������ǣ�ֻҪ�ǿɵ����������������±꣬�����Ե�����<br>��ô��ʲô��<strong>�ɵ�������</strong>�������������Ա�<code>for</code>ѭ�������Ķ������<strong>�ɵ�������</strong>����ô������ж�һ�������ǿɵ��������أ�������ͨ��collectionsģ���Iterable�����жϣ�</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; from collections import Iterable</span><br><span class="line">&gt;&gt;&gt; isinstance(&#39;abc&#39;, Iterable) # str�Ƿ�ɵ���</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; isinstance([1,2,3], Iterable) # list�Ƿ�ɵ���</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt; isinstance(123, Iterable) # �����Ƿ�ɵ���</span><br><span class="line">False</span><br></pre></td></tr></table></figure>
 <p>������ô����һ�������ǿ��Ե������أ������������У����庯��������<code>for</code>������Ҫ������Ҫ���֮Ϊ<code>��Э�顱</code>��<strong>����</strong>����Ҫ�����Э���Ϊ<strong>�ɵ���Э��</strong>���ɵ���Э�����ڲ�ʵ����<code>__iter__()����</code>��һ����˵�������������<code>__iter__()����</code>������������<strong>�ɵ�������</strong>��</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; class MyList(object):</span><br><span class="line">... ����def __init__(self):</span><br><span class="line">... ��������self.container &#x3D; []</span><br><span class="line">...���� def add(self, item):</span><br><span class="line">... ��������self.container.append(item)</span><br><span class="line">... ����def __iter__(self):</span><br><span class="line">... ��������&quot;&quot;&quot;����һ��������&quot;&quot;&quot;</span><br><span class="line">... ��������# ������ʱ������ι���һ������������</span><br><span class="line">... ��������pass</span><br><span class="line">...</span><br><span class="line">&gt;&gt;&gt; mylist &#x3D; MyList()</span><br><span class="line">&gt;&gt;&gt; from collections import Iterable</span><br><span class="line">&gt;&gt;&gt; isinstance(mylist, Iterable)</span><br><span class="line">True</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"># ���Է���������__iter__������mylist�����Ѿ���һ���ɵ���������</span><br></pre></td></tr></table></figure>
@@ -210,148 +214,30 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for i, value in enumerate([&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]):</span><br><span class="line">...     print(i, value)</span><br><span class="line">...</span><br><span class="line">0 A</span><br><span class="line">1 B</span><br><span class="line">2 C</span><br></pre></td></tr></table></figure>
 <p>forѭ���ͬʱ������������������Python���Ǻܳ����ģ���������Ĵ��룺</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; for x, y in [(1, 1), (2, 4), (3, 9)]:</span><br><span class="line">...     print(x, y)</span><br><span class="line">...</span><br><span class="line">1 1</span><br><span class="line">2 4</span><br><span class="line">3 9</span><br></pre></td></tr></table></figure>
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/the-first/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yang">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="易之道">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/10/the-first/" class="post-title-link" itemprop="url">the first</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-10 19:48:20" itemprop="dateCreated datePublished" datetime="2020-04-10T19:48:20+08:00">2020-04-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/10/the-first/" rel="prev" title="the first">
+      <i class="fa fa-chevron-left"></i> the first
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="易之道">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/10/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-10 19:17:52" itemprop="dateCreated datePublished" datetime="2020-04-10T19:17:52+08:00">2020-04-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
@@ -404,6 +290,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#python-�߼�����֮����"><span class="nav-number">1.</span> <span class="nav-text">python �߼�����֮����</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
